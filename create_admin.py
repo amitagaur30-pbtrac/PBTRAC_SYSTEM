@@ -1,9 +1,17 @@
-from app import app
 from database.db import db
-
 from models.admin import Admin
 
-with app.app_context():
+
+def create_admin():
+
+    existing = Admin.query.filter_by(
+        username="admin"
+    ).first()
+
+    if existing:
+
+        print("Admin already exists.")
+        return
 
     admin = Admin(
         username="admin",
@@ -13,4 +21,4 @@ with app.app_context():
     db.session.add(admin)
     db.session.commit()
 
-    print("Admin created")
+    print("Admin created successfully.")

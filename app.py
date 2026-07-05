@@ -1,4 +1,5 @@
 import os
+from database.initialize_database import initialize_database
 from flask import Flask, render_template
 
 from database.db import db
@@ -40,6 +41,7 @@ with app.app_context():
 
     db.create_all()
 
+    initialize_database()
 # ==================================================
 # REGISTER BLUEPRINTS
 # ==================================================

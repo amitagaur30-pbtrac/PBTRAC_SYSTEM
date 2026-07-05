@@ -1,15 +1,28 @@
-from app import app
 from database.db import db
-
+import os
 from models.department import Department
 from models.service import Service
 
 import pandas as pd
 
-# Read Excel file
-df = pd.read_excel("services.xlsx")
 
-with app.app_context():
+def import_services():
+
+    # Don't import again if services already exist
+    if Service.query.count() > 0:
+        print("Services already imported.")
+        return
+
+    print("Importing services...")
+
+    # Read Excel file
+    
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+    excel_path = os.path.join(BASE_DIR, "services.xlsx")
+
+    df = pd.read_excel(excel_path)
 
     imported = 0
 
@@ -207,4 +220,4 @@ with app.app_context():
 
     db.session.commit()
 
-    print("Imported:", imported)
+    print(f"{imported} services imported successfully.")
