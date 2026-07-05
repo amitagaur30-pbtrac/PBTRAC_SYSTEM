@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 
 from database.db import db
@@ -18,7 +19,10 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///ptac.db"
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-app.secret_key = "ptac_secret_key"
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "ptac_secret_key"
+)
 
 # ==================================================
 # DATABASE INITIALIZATION
