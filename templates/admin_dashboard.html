@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h2>PTAC Admin Dashboard</h2>
+
+    <table>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Complaint No.</th>
+            <th>Applicant</th>
+            <th>Mobile</th>
+            <th>Status</th>
+            <th>Action</th>
+
+        </tr>
+
+        {% for c in complaints %}
+
+        <tr>
+
+            <td>{{ c.id }}</td>
+
+            <td>{{ c.complaint_no }}</td>
+
+            <td>{{ c.applicant_name }}</td>
+
+            <td>{{ c.mobile }}</td>
+
+            <td>
+
+                <span class="status">
+                    {{ c.status }}
+                </span>
+
+            </td>
+
+            <td>
+
+                <a href="/admin/complaint/{{ c.id }}">
+                        <button>
+                         View Details
+                         </button>
+                     </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+<style>
+
+.dashboard-container{
+
+    width:95%;
+    margin:auto;
+    margin-top:30px;
+
+}
+
+h2{
+
+    text-align:center;
+    color:#003366;
+    margin-bottom:25px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+th{
+
+    background:#003366;
+
+    color:white;
+
+    padding:15px;
+}
+
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:center;
+}
+
+tr:hover{
+
+    background:#f4f7fc;
+}
+
+select{
+
+    padding:8px;
+
+    border-radius:6px;
+}
+
+button{
+
+    background:#0066cc;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    margin-top:5px;
+}
+
+button:hover{
+
+    background:#004999;
+}
+
+.status{
+
+    background:#d4edda;
+
+    padding:5px 10px;
+
+    border-radius:15px;
+
+    font-size:14px;
+}
+
+</style>
+
+{% endblock %}

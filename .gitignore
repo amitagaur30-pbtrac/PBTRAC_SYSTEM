@@ -1,0 +1,36 @@
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# SQLite Database
+*.db
+*.sqlite3
+instance/
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Testing files
+test_*.py
+
+# Excel import files
+services.xlsx
+
+# OS
+.DS_Store
+Thumbs.db

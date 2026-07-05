@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero-section">
+
+    <h2>
+        Welcome to Punjab Transparency & Accountability Commission
+    </h2>
+
+    <p>
+        The Punjab Transparency and Accountability Commission (PTAC)
+        ensures transparency, accountability and timely delivery of
+        notified public services to citizens of Punjab.
+    </p>
+
+</div>
+
+
+<div class="cards-container">
+
+    <div class="card">
+
+        <h3>📝 Register Complaint</h3>
+
+        <p>
+            File a complaint regarding delay, non-delivery,
+            rejection or deficiency in notified public services.
+        </p>
+
+        <a href="/register">
+            <button>
+                Register Now
+            </button>
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>🔍 Track Complaint</h3>
+
+        <p>
+            Check the current status of your complaint
+            using your complaint number.
+        </p>
+
+        <a href="/track">
+            <button>
+                Track Status
+            </button>
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>📖 Citizen Help</h3>
+
+        <p>
+            Learn how to file complaints and understand
+            the complaint process under PTAC.
+        </p>
+
+        <button onclick="showFaq()">
+            View FAQ
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="faqSection" class="faq-box">
+
+    <h2>Frequently Asked Questions (FAQs)</h2>
+
+    <hr>
+
+    <h4>1. Who can file a complaint before PTAC?</h4>
+
+    <p>
+        Any citizen who has applied for a notified public service and has
+        faced delay, non-delivery, rejection or deficiency in service
+        can file a complaint before the Commission.
+    </p>
+
+
+    <h4>2. What information is required while filing a complaint?</h4>
+
+    <p>The following details are mandatory:</p>
+
+    <ul>
+
+        <li>Name and Address of Applicant</li>
+
+        <li>Mobile Number and Email ID</li>
+
+        <li>Name of Department and Office Concerned</li>
+
+        <li>Name of Service Applied For</li>
+
+        <li>Application/Acknowledgment Number</li>
+
+        <li>Date of Submission of Application</li>
+
+        <li>Brief Description of Grievance</li>
+
+    </ul>
+
+
+    <h4>3. What documents should be attached?</h4>
+
+    <p>Citizens should upload copies of:</p>
+
+    <ul>
+
+        <li>Original application submitted to the department</li>
+
+        <li>Acknowledgment receipt</li>
+
+        <li>Any correspondence with the department</li>
+
+        <li>Proof of delay, rejection or deficiency, if available</li>
+
+    </ul>
+
+
+    <h4>4. What relief can be sought from the Commission?</h4>
+
+    <p>The applicant may seek:</p>
+
+    <ul>
+
+        <li>Direction for delivery of the service</li>
+
+        <li>Action against the concerned official</li>
+
+        <li>Imposition of penalty for delay</li>
+
+        <li>Compensation or any other appropriate relief</li>
+
+    </ul>
+
+
+    <h4>5. Is there any fee for filing a complaint?</h4>
+
+    <p>
+        No. Filing a complaint before PTAC through this portal is free of cost.
+    </p>
+
+
+    <h4>6. How can I track my complaint?</h4>
+
+    <p>
+        After successful registration, a unique Complaint Number will be
+        generated. Use this number under the "Track Complaint" section.
+    </p>
+
+
+    <h4>7. Can I upload multiple documents?</h4>
+
+    <p>
+        Yes. Multiple supporting documents can be uploaded in PDF,
+        JPG, JPEG and PNG formats.
+    </p>
+
+
+    <h4>8. What happens after filing the complaint?</h4>
+
+    <p>
+        After submission, the complaint is scrutinized by PTAC officials.
+        The complaint may then be assigned for examination and further action.
+    </p>
+
+
+    <h4>9. Will I be able to see remarks or status updates?</h4>
+
+    <p>
+        Yes. Citizens can view the latest status and remarks entered by
+        Commission officials through the Track Complaint section.
+    </p>
+
+
+    <h4>10. What types of grievances should NOT be filed?</h4>
+
+    <p>
+        Complaints unrelated to notified public services, personal disputes,
+        court matters, or anonymous complaints should not be filed through
+        this portal.
+    </p>
+
+</div>
+
+
+<style>
+
+.hero-section{
+
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.hero-section h2{
+
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.hero-section p{
+
+    font-size:18px;
+    color:#555;
+    line-height:1.8;
+}
+
+.cards-container{
+
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+
+    background:white;
+    width:320px;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+}
+
+.card h3{
+
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.card p{
+
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+.card button{
+
+    background:#0055a5;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.card button:hover{
+
+    background:#003366;
+}
+
+.faq-box{
+
+    display:none;
+    background:white;
+    margin-top:40px;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faq-box h2{
+
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.faq-box h4{
+
+    margin-top:25px;
+    color:#0055a5;
+}
+
+.faq-box p{
+
+    margin-top:10px;
+    color:#555;
+    line-height:1.8;
+}
+
+.faq-box ul{
+
+    margin-left:25px;
+    margin-top:10px;
+}
+
+.faq-box li{
+
+    margin-bottom:8px;
+    color:#555;
+}
+
+</style>
+
+
+<script>
+
+function showFaq(){
+
+    let faq =
+        document.getElementById(
+            "faqSection"
+        );
+
+    if(faq.style.display === "block"){
+
+        faq.style.display = "none";
+    }
+
+    else{
+
+        faq.style.display = "block";
+
+        faq.scrollIntoView({
+            behavior:"smooth"
+        });
+    }
+}
+
+</script>
+
+{% endblock %}
