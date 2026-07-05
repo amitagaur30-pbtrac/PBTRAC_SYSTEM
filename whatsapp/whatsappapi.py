@@ -1,9 +1,8 @@
 import requests
+import os
 
-
-ACCESS_TOKEN = "YOUR_WHATSAPP_ACCESS_TOKEN"
-PHONE_NUMBER_ID = "YOUR_PHONE_NUMBER_ID"
-
+ACCESS_TOKEN = os.getenv("WHATSAPP_ACCESS_TOKEN")
+PHONE_NUMBER_ID = os.getenv("WHATSAPP_PHONE_NUMBER_ID")
 def send_text_message(phone, message):
 
     url = (
